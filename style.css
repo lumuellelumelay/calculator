@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+/** body **/
+body {
+}
+
+/** header of the calculator **/
+header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  margin-bottom: 0.5em;
+  padding: 1.5em;
+
+  font-weight: 800;
+}
+
+header > h1 {
+  font-size: 3.5rem;
+}
+
+/** calculator **/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.calculator {
+  background-color: rgb(62, 62, 62);
+  box-shadow: 0px 2px calc(20px + 35px) 20px rgba(0, 0, 0, 0.25);
+
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.calculator-wrapper {
+  display: grid;
+  grid-template-rows: minmax(140px, auto) 1fr;
+  gap: 20px;
+}
+
+/** calculator buttons **/
+.calculator-wrapper .calculator-buttons {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+  gap: 8px;
+}
+
+/** numeric button, decimal point, equal operator **/
+.calculator-buttons > button {
+  cursor: pointer;
+
+  background-color: rgba(224, 224, 224, 1);
+  border: none;
+  border-radius: calc(20px - (25px / 2));
+
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.calculator-buttons > button:hover {
+  background-color: rgba(243, 243, 243, 1);
+}
+
+/* --- mouse control --- */
+.calculator-buttons > button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* --- keyboard control --- */
+.calculator-buttons > button.active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/** for AC button **/
+.span-two.clear-button {
+  background-color: rgba(244, 67, 54, 1);
+  color: white;
+}
+
+.span-two.clear-button:hover {
+  background-color: rgba(244, 90, 85, 1);
+}
+
+/** for DEL button **/
+.delete-button.operator {
+  background-color: rgba(255, 87, 34, 1);
+  color: white;
+}
+
+.delete-button.operator:hover {
+  background-color: rgb(255, 111, 67, 1);
+}
+
+/** for sign operator **/
+.sign.operator {
+  background-color: rgba(255, 149, 0, 1);
+  color: white;
+}
+
+.sign.operator:hover {
+  background-color: rgb(255, 173, 59);
+}
+
+/** span-two for AC and = operator **/
+.span-two {
+  grid-column: span 2;
+}
+
+/** calculator display **/
+.calculator-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  grid-column: 1 / -1;
+  padding: 10px;
+
+  background-color: white;
+  border-radius: calc(20px - (25px / 2));
+
+  word-wrap: break-word;
+  word-break: break-all;
+
+  font-weight: 600;
+}
+
+/** for the output **/
+.calculator-display .previous-operand {
+  color: rgba(18, 18, 18, 0.8);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.calculator-display .current-operand {
+  color: rgba(18, 18, 18, 1);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+/** footer **/
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  border-top: 1px solid rgb(47, 47, 47);
+
+  margin-top: 1.5em;
+  padding: 3em;
+
+  font-size: 1rem;
+}
