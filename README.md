@@ -1,4 +1,4 @@
-# calculator# Calculator Project
+# Calculator Project
 
 A basic calculator project that performs basic mathematical equation such as:
 
